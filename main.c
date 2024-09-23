@@ -18,11 +18,12 @@ int main(const int argc, const char * argv[]){
     add_item(items,5.45,"3539756","Food","Boudin blanc",3);
     add_item(items,2.3,"2598764","Food","Crepes",4);
 
-    if(argc > 1) {
-        char *sku_input = argv[1];
+    if(argc >= 2) {
+        char *sku_input;
+        sku_input = argv[1];
         int size = sizeof(items)/sizeof(items[0]);
         int check = 0;
-        for(int i = 0; i >= size; i++) {
+        for(int i = 0; i < size; i++) {
             if(strcmp(items[i].sku,sku_input) == 0) {
                 Item *item = &items[i];
                 print_items(item,1);
@@ -31,6 +32,7 @@ int main(const int argc, const char * argv[]){
             }
             if(check == 0) printf("Item not found");
         }
+        free(sku_input);
 
     }else {
         print_items(items,5);
