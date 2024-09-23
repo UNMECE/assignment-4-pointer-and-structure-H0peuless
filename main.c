@@ -19,19 +19,17 @@ int main(const int argc, const char * argv[]){
     add_item(items,2.3,"2598764","Food","Crepes",4);
 
     if(argc >= 2) {
-        char *sku_input;
-        sku_input = argv[1];
-        int size = sizeof(items)/sizeof(items[0]);
+        int size = 5;
         int check = 0;
         for(int i = 0; i < size; i++) {
-            if(strcmp(items[i].sku,sku_input) == 0) {
+            if(strcmp(items[i].sku,argv[1]) == 0) {
                 Item *item = &items[i];
                 print_items(item,1);
                 free(item);
                 break;
             }
-            if(check == 0) printf("Item not found");
         }
+        if(check == 0) printf("Item not found");
 
     }else {
         print_items(items,5);
