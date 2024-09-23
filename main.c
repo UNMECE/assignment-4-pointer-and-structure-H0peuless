@@ -1,13 +1,16 @@
 #include "item.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 void add_item(Item *item_list, double price, char *sku, char *category, char *name, int index);
 void free_items(Item *item_list, int size);
 double average_price(Item *item_list, int size);
 void print_items(Item *item_list, int size);
 
-int main(){
+
+
+int main(const int argc, const char * argv[]){
     Item *items = malloc(sizeof(Item)*5);
     add_item(items,4.3,"1234567","Food","Lait",0);
     add_item(items,19.99,"0987654","Game","Monopoly",1);
@@ -15,9 +18,25 @@ int main(){
     add_item(items,5.45,"3539756","Food","Boudin blanc",3);
     add_item(items,2.3,"2598764","Food","Crepes",4);
 
-    print_items(items,5);
-    printf("average price = %.2f\n",average_price(items,5));
-    free_items(items,5);
+    if(argc > 1) {
+        char *sku_input = argv[1];
+        int size = sizeof(items)/sizeof(items[0]);
+        int check = 0;
+        for(int i = 0; i >= size; i++) {
+            if(strcmp(items[i].sku,sku_input) == 0) {
+                Item *item = &items[i];
+                print_items(item,1);
+                free(item);
+                break;
+            }
+            if(!check) printf("Item not found");
+        }
+
+    }else {
+        print_items(items,5);
+        printf("average price = %.2f\n",average_price(items,5));
+        free_items(items,5);
+    }
     return 0;
 };
 
