@@ -39,12 +39,17 @@ int main(const int argc, const char * argv[]){
 };
 
 void add_item(Item *item_list, double price, char *sku, char *category, char *name, int index){
-    Item item;
-    item.price = price;
-    item.sku = sku;
-    item.category = category;
-    item.name = name;
-    item_list[index] = item;
+    if(index >=0 && index < 5) {
+        Item item;
+        item.price = price;
+        item.sku = sku;
+        item.category = category;
+        item.name = name;
+        item_list[index] = item;
+    }
+    else {
+        printf("index out of range\n");
+    }
 };
 
 void free_items(Item *item_list, int size){
