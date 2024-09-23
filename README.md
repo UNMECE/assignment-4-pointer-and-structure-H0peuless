@@ -73,3 +73,9 @@ Look up short-circuit in programming for an explanation.  If you do this impleme
 - 4 Functions implemented and used correctly - 50%
 - Command line arguments used and searching works - 20%
 - Code produces expected output - 20%
+
+# Student instructions
+To compile the code please use:
+```
+gcc -std=c99 -o main main.c -lm
+```
