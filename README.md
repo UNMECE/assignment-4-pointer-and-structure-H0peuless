@@ -1,4 +1,6 @@
-# ECE231_Assignment4
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/kLjJ9ncW)
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=16109770&assignment_repo_type=AssignmentRepo)
+# ECE231_Assignment4 of Prevost Maxime
 Pointers and structures
 # Lab Assignment 4
 We will practice more pointers and structures to become more familiar with their usage.  We will create an array of structures.
@@ -71,3 +73,9 @@ Look up short-circuit in programming for an explanation.  If you do this impleme
 - 4 Functions implemented and used correctly - 50%
 - Command line arguments used and searching works - 20%
 - Code produces expected output - 20%
+
+# Student instructions
+To compile the code please use:
+```
+gcc -std=c99 -o main main.c -lm
+```
