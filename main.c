@@ -9,6 +9,10 @@ void print_items(Item *item_list, int size);
 
 int main(){
     Item *items = malloc(sizeof(Item)*5);
+    add_item(items,12.34,"1234567","Food","Lait",0);
+    print_items(items,1);
+    printf("average price = %f\n",average_price(items,1));
+    free_items(items,5);
     return 0;
 };
 
@@ -29,7 +33,7 @@ void free_items(Item *item_list, int size){
 double average_price(Item *item_list, int size){
     double avg = 0;
     for(int i = 0; i < size; i++ ){
-        avg += item_list[size].price;
+        avg += item_list[i].price;
     }
     return avg/size;
 }
