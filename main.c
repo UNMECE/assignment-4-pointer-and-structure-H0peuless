@@ -25,11 +25,10 @@ int main(const int argc, const char * argv[]){
             if(strcmp(items[i].sku,argv[1]) == 0) {
                 Item *item = &items[i];
                 print_items(item,1);
-                free(item);
                 break;
             }
         }
-        if(check == 0) printf("Item not found");
+        if(check == 0) printf("Item not found\n");
 
     }else {
         print_items(items,5);
