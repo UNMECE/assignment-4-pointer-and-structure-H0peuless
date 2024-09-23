@@ -32,7 +32,6 @@ int main(const int argc, const char * argv[]){
             }
             if(check == 0) printf("Item not found");
         }
-        free(sku_input);
 
     }else {
         print_items(items,5);
