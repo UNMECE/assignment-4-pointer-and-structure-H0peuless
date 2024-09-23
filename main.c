@@ -29,7 +29,7 @@ int main(const int argc, const char * argv[]){
                 free(item);
                 break;
             }
-            if(!check) printf("Item not found");
+            if(check == 0) printf("Item not found");
         }
 
     }else {
